@@ -1,0 +1,70 @@
+
+
+.contenedor-general {
+    background-image: url("../../../assets/fondo1.jpg");
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.miformu1 {
+    border-radius: 5%;
+    border: 2px solid orange;
+    padding: 5%;
+    height: 500px;
+    color:white;
+    background-color: rgba(170, 152, 152, 0.442);
+}
+
+.miformu2 {
+    border-radius: 5%;
+    border: 2px solid orange;
+    padding: 10%;
+    height: 500px;
+    color: white;
+    background-color: rgba(170, 152, 152, 0.442)
+    
+}
+
+/* .ImagenPrincipal {
+    border-radius: 47%;
+    padding-top: 3%;
+    margin-left: 22%;
+    width: 55%;
+} */
+
+.ImagenPrincipal {
+    width:180px;
+    height:180px;
+    border-radius:90px;
+    border:5px solid white;
+    margin-left: 22%;
+
+}
+
+
+
+
+.contenedor-izquierda {
+    width: 30%
+}
+
+.contenedor-derecha {
+    width: 30%
+}
+
+.btn {
+    float: none;
+    margin-left: 25%;
+    margin-top: -10%;
+    width: 45%
+}
+
+.registrate {
+    text-align: center;
+}

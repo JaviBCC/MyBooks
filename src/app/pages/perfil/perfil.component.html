@@ -1,0 +1,69 @@
+<div class = contenedor-general>
+
+    <div class = "contenedor-izquierda">     
+        <form class = "miformu1">
+
+            <img class = "ImagenPrincipal" src="../../../assets/chinin.jpg"> 
+           
+            <!-- Nombre input -->
+            <h2 class = "registrate">Mi Primo Koreano</h2>
+            <hr style="border:2px;">
+    
+            <div class="form-outline mb-4">
+            <input type="email" id="form1Example1" class="form-control" placeholder="{{usuario1.nombre}}"/>
+            <label class="form-label" for="form1Example1"></label>
+            </div>
+        
+            <!-- Apellido input -->
+            <div class="form-outline mb-4">
+            <input type="password" id="form1Example2" class="form-control" placeholder="{{usuario1.apellidos}}"/>
+            <label class="form-label" for="form1Example2"></label>
+            </div>
+    
+            <!-- Correo input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="form1Example2" class="form-control" placeholder="{{usuario1.correo}}"/>
+                <label class="form-label" for="form1Example2"></label>
+            </div>
+        </form>
+    </div>
+
+    <div class = "contenedor-derecha">
+        <form class = "miformu2">
+            <!-- Nombre input -->
+            <h2 class = "registrate">Enviar Datos</h2>
+            <hr style="border:2px;">
+    
+            <div class="form-outline mb-4">
+            <input type="text" id="form1Example1" class="form-control" placeholder="Nombre" #input1/>
+            <label class="form-label" for="form1Example1"></label>
+            </div>
+        
+            <!-- Apellido input -->
+            <div class="form-outline mb-4">
+            <input type="text" id="form1Example2" class="form-control" placeholder="Apellido" #input2/>
+            <label class="form-label" for="form1Example2"></label>
+            </div>
+    
+            <!-- Correo input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="form1Example2" class="form-control" placeholder="Correo" #input3/>
+                <label class="form-label" for="form1Example2"></label>
+                </div>
+    
+            <!-- Contraseña input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="form1Example2" class="form-control" placeholder="Url" #input4/>
+                <label class="form-label" for="form1Example2"></label>
+            </div>
+        
+            <!-- Submit button -->
+            <div class = "Botones">
+                <button type="button" (click)=enviar(input1,input2,input3,input4) class="btn btn-success">Modificar</button>
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
