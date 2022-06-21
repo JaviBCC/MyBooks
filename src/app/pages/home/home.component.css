@@ -1,0 +1,27 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    }
+
+
+.contenedor-general{  
+    background-image: url("../../../assets/biblioteca.jpg");
+    height: 100vh;
+    text-align: center;
+    color: #0DCAF0;
+    
+}
+
+
+.titulo-central {
+    padding-top: 5%;
+
+}
+
+.titulo-abajo {
+    margin-top: 35%;
+
+}
