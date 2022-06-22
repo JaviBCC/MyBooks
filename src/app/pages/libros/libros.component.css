@@ -1,0 +1,59 @@
+
+
+.contenedor-general {
+    border: 2px solid red;
+
+ 
+}
+
+.contenedor-arriba {
+    padding: 10%;
+    gap: 2%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+.card {
+    border: 2px solid grey;
+}
+
+
+/* .btn {
+    background-color: btn-success; 
+
+} */
+
+
+input::placeholder {
+    text-align: center;
+}
+
+.contenedor-formu{ 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top: 5%;
+
+}
+
+.miformu1 {
+    border: 2px solid darkgray;
+    border-radius: 2%;
+    width: 250px;
+    margin-bottom:  5%;
+    padding: 1%;
+}
+
+.registrate {
+    text-align: center;
+    justify-content: center;
+}
+
+.btn1 {
+    float: none;
+    margin-left: 25%;
+}

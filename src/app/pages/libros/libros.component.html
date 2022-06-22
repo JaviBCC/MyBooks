@@ -1,0 +1,93 @@
+
+
+<div class= "contenedor-general">
+
+    <div class = "contenedor-arriba">
+
+        <div *ngFor="let libro of newlibro; let i = index" class="card" style="width: 18rem;">
+        
+
+            <img src={{libro.photo}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{libro.titulo}}</h5>
+                    <p class="card-text">{{libro.tipoLibro}}</p>
+                    <p class="card-text">{{libro.id_libro | mostrarreferencia}}</p>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{libro.autor}}</li>
+                    <li class="list-group-item">{{libro.precio}}</li>
+                    <li class="list-group-item">{{libro.photo}}</li>
+                  
+                </ul>
+
+                <a [ngClass]="i%2==0 ? 'btn-primary' : 'btn-warning'" href="#" class="btn btn-primary">Comprar</a>
+                
+
+        </div> 
+
+      <div *ngIf="newlibro.length === 0">
+        IMPORTANTE - No hay ningun libro incluido
+      </div>
+
+    </div>
+
+
+    <div class="contenedor-abajo">
+        <div class = "contenedor-formu">
+            <form class = "miformu1">
+               
+                <h2 class = "registrate">Registro Libros</h2>
+                <hr style="border:2px;">
+        
+                 <!-- Id Libro input -->
+                <div class="form-outline mb-4">
+                <input type="text" id="form1Example1" class="form-control" placeholder="ID Libro" #input1/>
+                <label class="form-label" for="form1Example1"></label>
+                </div>
+            
+                <!-- Id Usuario input -->
+                <div class="form-outline mb-4">
+                <input type="text" id="form1Example2" class="form-control" placeholder="ID Usuario" #input2/>
+                <label class="form-label" for="form1Example2"></label>
+                </div>
+        
+                <!-- Titulo Libro input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="form1Example2" class="form-control" placeholder="Titulo Libro" #input3/>
+                    <label class="form-label" for="form1Example2"></label>
+                    </div>
+        
+                <!-- Tipo Libro input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="form1Example2" class="form-control" placeholder="Tipo Libro" #input4/>
+                    <label class="form-label" for="form1Example2"></label>
+                    </div>
+
+                <!-- Autor input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="form1Example2" class="form-control" placeholder="Autor" #input5/>
+                    <label class="form-label" for="form1Example2"></label>
+                </div>
+
+                <!-- Precio input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="form1Example2" class="form-control" placeholder="Precio" #input6/>
+                    <label class="form-label" for="form1Example2"></label>
+                </div>
+
+                
+                <!-- Photo input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="form1Example2" class="form-control" placeholder="Photo" #input7/>
+                    <label class="form-label" for="form1Example2"></label>
+                </div>             
+            
+                <!-- Submit button -->
+                    <button type="reset" id= "miboton1" (click)=enviar(input1,input2,input3,input4,input5,input6,input7) class="btn1 btn-success">Registrar Libro</button>
+              
+            </form>
+        </div>
+    </div>
+</div>
+
