@@ -11,6 +11,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { MostrarreferenciaPipe } from './pipes/mostrarreferencia.pipe';
+import { ModificarLibroComponent } from './pages/modificar-libro/modificar-libro.component';
+import { AnadirLibroComponent } from './pages/anadir-libro/anadir-libro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MostrarreferenciaPipe } from './pipes/mostrarreferencia.pipe';
     RegistroComponent,
     PerfilComponent,
     LibrosComponent,
-    MostrarreferenciaPipe
+    MostrarreferenciaPipe,
+    ModificarLibroComponent,
+    AnadirLibroComponent
   ],
   imports: [
     BrowserModule,

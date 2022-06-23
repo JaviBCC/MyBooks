@@ -1,5 +1,3 @@
-
-
 .contenedor-general {
     border: 2px solid red;
 
@@ -7,7 +5,7 @@
 }
 
 .contenedor-arriba {
-    padding: 10%;
+    padding: 2%;
     gap: 2%;
     display:flex;
     flex-wrap: wrap;
@@ -34,16 +32,17 @@ input::placeholder {
     display:flex;
     justify-content:center;
     align-items:center;
-    padding-top: 5%;
+    padding-top: 2%;
 
 }
 
 .miformu1 {
     border: 2px solid darkgray;
     border-radius: 2%;
-    width: 250px;
-    margin-bottom:  5%;
+    width: 350px;
+    margin-bottom:  3%;
     padding: 1%;
+    background-color: rgba(170, 152, 152, 0.442);
 }
 
 .registrate {
@@ -55,4 +54,3 @@ input::placeholder {
     float: none;
     margin-left: 25%;
 }
-

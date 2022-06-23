@@ -1,13 +1,10 @@
-
-
 .contenedor-general {
     border: 2px solid red;
 
- 
 }
 
 .contenedor-arriba {
-    padding: 10%;
+    padding: 2%;
     gap: 2%;
     display:flex;
     flex-wrap: wrap;
@@ -20,11 +17,6 @@
 }
 
 
-/* .btn {
-    background-color: btn-success; 
-
-} */
-
 
 input::placeholder {
     text-align: center;
@@ -34,16 +26,17 @@ input::placeholder {
     display:flex;
     justify-content:center;
     align-items:center;
-    padding-top: 5%;
+  
 
 }
 
 .miformu1 {
     border: 2px solid darkgray;
     border-radius: 2%;
-    width: 250px;
+    width: 350px;
     margin-bottom:  5%;
     padding: 1%;
+    background-color: rgba(170, 152, 152, 0.442);
 }
 
 .registrate {
@@ -53,6 +46,7 @@ input::placeholder {
 
 .btn1 {
     float: none;
-    margin-left: 25%;
+    margin-left: 18%;
+    width: 65%;
+    margin-bottom: 15%;
 }
-

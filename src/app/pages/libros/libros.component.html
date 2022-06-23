@@ -22,9 +22,11 @@
                 </ul>
 
                 <a [ngClass]="i%2==0 ? 'btn-primary' : 'btn-warning'" href="#" class="btn btn-primary">Comprar</a>
-                
 
+                
         </div> 
+
+        <a  type="reset" (click)=eliminarLibro(input1) class="btn btn-primary" >Eliminar</a>
 
       <div *ngIf="newlibro.length === 0">
         IMPORTANTE - No hay ningun libro incluido
@@ -37,54 +39,19 @@
         <div class = "contenedor-formu">
             <form class = "miformu1">
                
-                <h2 class = "registrate">Registro Libros</h2>
+                <h2 class = "registrate">Encontrar Libro</h2>
                 <hr style="border:2px;">
         
                  <!-- Id Libro input -->
                 <div class="form-outline mb-4">
-                <input type="text" id="form1Example1" class="form-control" placeholder="ID Libro" #input1/>
+                <input type="number" id="form1Example1" class="form-control" placeholder="ID Libro" #input1/>
                 <label class="form-label" for="form1Example1"></label>
                 </div>
             
-                <!-- Id Usuario input -->
-                <div class="form-outline mb-4">
-                <input type="text" id="form1Example2" class="form-control" placeholder="ID Usuario" #input2/>
-                <label class="form-label" for="form1Example2"></label>
-                </div>
-        
-                <!-- Titulo Libro input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form1Example2" class="form-control" placeholder="Titulo Libro" #input3/>
-                    <label class="form-label" for="form1Example2"></label>
-                    </div>
-        
-                <!-- Tipo Libro input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form1Example2" class="form-control" placeholder="Tipo Libro" #input4/>
-                    <label class="form-label" for="form1Example2"></label>
-                    </div>
-
-                <!-- Autor input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form1Example2" class="form-control" placeholder="Autor" #input5/>
-                    <label class="form-label" for="form1Example2"></label>
-                </div>
-
-                <!-- Precio input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form1Example2" class="form-control" placeholder="Precio" #input6/>
-                    <label class="form-label" for="form1Example2"></label>
-                </div>
-
-                
-                <!-- Photo input -->
-                <div class="form-outline mb-4">
-                    <input type="text" id="form1Example2" class="form-control" placeholder="Photo" #input7/>
-                    <label class="form-label" for="form1Example2"></label>
-                </div>             
             
                 <!-- Submit button -->
-                    <button type="reset" id= "miboton1" (click)=enviar(input1,input2,input3,input4,input5,input6,input7) class="btn1 btn-success">Registrar Libro</button>
+                <button type="reset" id= "miboton1" (click)=anadirLibro2(input1) class="btn1 btn-success">Encontrar Libro</button>
+               
               
             </form>
         </div>
