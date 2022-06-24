@@ -5,9 +5,11 @@
     <div class = "contenedor-arriba">
 
         <div *ngFor="let libro of newlibro; let i = index" class="card" style="width: 18rem;">
-        
+
+            <a  type="reset" (click)=eliminarLibro(libro.id_libro) class="btn btn-primary" >X</a>
 
             <img src={{libro.photo}} class="card-img-top" alt="...">
+
                 <div class="card-body">
                     <h5 class="card-title">{{libro.titulo}}</h5>
                     <p class="card-text">{{libro.tipoLibro}}</p>
@@ -26,7 +28,7 @@
                 
         </div> 
 
-        <a  type="reset" (click)=eliminarLibro(input1) class="btn btn-primary" >Eliminar</a>
+        
 
       <div *ngIf="newlibro.length === 0">
         IMPORTANTE - No hay ningun libro incluido

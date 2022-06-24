@@ -32,17 +32,14 @@ export class LibrosComponent implements OnInit {
   
 
 
-    eliminarLibro(input1:HTMLInputElement) {
-        this.newlibro = [];
+    eliminarLibro(libro:string) {
 
-        let numero:number = input1.valueAsNumber;
+        let numero:number = parseInt(libro)
 
-        console.log(numero);
         this.librosService.delete(numero);
+        // this.newlibro = this.librosService.getAll();
     }
 
-
-    
     ngOnInit(): void {
 
     }

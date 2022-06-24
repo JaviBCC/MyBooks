@@ -61,20 +61,24 @@ export class LibrosService {
 
 
   public delete(id_libro:number):boolean {
-    console.log(id_libro)
     
+    
+    let resultado = false;
+
     for(let i = 0; i < this.newLibro.length; i++) {
 
-       console.log(this.newLibro[i].id_libro)
-
+      
        if (this.newLibro[i].id_libro == (id_libro)) {
           this.newLibro.splice(i, 1);
+          resultado = true;
+          console.log(i + "libro borrado" + id_libro);
           
+       }
+
+      // else {
+
       // }
-      //  else {
-      //     return false;
-      
-      }
-    } return true;
+    } 
+      return resultado;
   } 
 }
