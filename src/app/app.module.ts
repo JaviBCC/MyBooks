@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -13,6 +13,7 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { MostrarreferenciaPipe } from './pipes/mostrarreferencia.pipe';
 import { ModificarLibroComponent } from './pages/modificar-libro/modificar-libro.component';
 import { AnadirLibroComponent } from './pages/anadir-libro/anadir-libro.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,13 @@ import { AnadirLibroComponent } from './pages/anadir-libro/anadir-libro.componen
     LibrosComponent,
     MostrarreferenciaPipe,
     ModificarLibroComponent,
-    AnadirLibroComponent
+    AnadirLibroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

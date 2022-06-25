@@ -12,7 +12,7 @@ export class PerfilComponent implements OnInit {
 
   constructor() { 
 
-    this.usuario1 = new Usuario(1, "Antonio", "Martinez", "antonio2@gmail.com", "../../../assets/fondo1.jpg","miPrima")
+    this.usuario1 = new Usuario("Antonio", "Martinez", "antonio2@gmail.com", "../../../assets/fondo1.jpg","miPrima")
 
   }
 
