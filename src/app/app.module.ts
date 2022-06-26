@@ -14,6 +14,7 @@ import { MostrarreferenciaPipe } from './pipes/mostrarreferencia.pipe';
 import { ModificarLibroComponent } from './pages/modificar-libro/modificar-libro.component';
 import { AnadirLibroComponent } from './pages/anadir-libro/anadir-libro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginComponent } from './pages/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

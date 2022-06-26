@@ -17,13 +17,13 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) {
 
-
   }
     
 
   getRegistro(usuario:Usuario) {
    console.log("Paso por GET FALSO")
 
+    console.log(usuario.nombre + " este es el nombre")
     this.url = "http://localhost:3000/login"
     return this.http.post(this.url, usuario)
   }
@@ -31,10 +31,10 @@ export class UsuarioService {
 
   postRegistro(usuario:Usuario) {
     console.log("Paso por POST")
+    
     this.url = "http://localhost:3000/registro"
     console.log(usuario.nombre + " este es el nombre")
     return this.http.post(this.url, usuario)
   }
-
 
 }

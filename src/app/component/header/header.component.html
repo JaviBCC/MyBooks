@@ -6,17 +6,29 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
 
+
+            <div class="navbar-nav" *ngIf="myService.logueado == true">
+              <!-- <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+              <a class="nav-link" routerLink="registro">Register</a>
+              <a class="nav-link" routerLink="login">Login</a> -->
+              <a class="nav-link" routerLink="libros">Libros</a>
+              <a class="nav-link" routerLink="anadir-libro">Añadir Libro</a>
+              <a class="nav-link" routerLink="modificar-libro">Modificar Libro</a>
+              <a class="nav-link" routerLink="perfil">Perfil</a>
+            </div>
+
+
+            <div class="navbar-nav" *ngIf="myService.logueado == false">
               <a class="nav-link active" aria-current="page" routerLink="">Home</a>
               <a class="nav-link" routerLink="registro">Register</a>
               <a class="nav-link" routerLink="login">Login</a>
-              <a class="nav-link" routerLink="perfil">Perfil</a>
-              <a class="nav-link" routerLink="libros">Libros</a>
-              <a class="nav-link" routerLink="modificar-libro">Modifica Libro</a>
-              <a class="nav-link" routerLink="anadir-libro">Añadir Libro</a>
-            </div>
+            </div>          
+
           </div>
         </div>
 </nav>
+
+
+
 
