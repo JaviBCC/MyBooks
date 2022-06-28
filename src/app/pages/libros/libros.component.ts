@@ -21,45 +21,8 @@ export class LibrosComponent implements OnInit {
 
     constructor(public librosService: LibrosService, public usuarioService: UsuarioService) {
       
-
+        this.usuario = usuarioService.usuario
     }
-
-
-    // enviarGetAll(input1: HTMLInputElement) {
-    //   this.newlibro = [];
-
-    //   let myUser:number = input1.valueAsNumber;
-    //   console.log(myUser)
-
-    //     this.librosService.getAll(myUser).subscribe((data:Libros[])=> {
-
-    //         for( let i=0; i < data.length; i++) {
-    //           this.newlibro.push(data[i])
-    //         }
-    //         console.log(data)
-    //     })
-    // }
-
-
-    // anadirLibro2(input1:HTMLInputElement) {
-    //     this.newlibro = [];
-
-    //     let numero:number = input1.valueAsNumber;
-    //     this.librosService.getOne(numero);
-
-    //     this.newlibro.push(this.librosService.getOne(numero));
-    // } 
-  
-
-
-    // eliminarLibro(libro:string) {
-
-    //     let numero:number = parseInt(libro)
-
-    //     this.librosService.delete(numero);
-    //     // this.newlibro = this.librosService.getAll();
-    // }
-
 
 
     buscaLibro(input1: HTMLInputElement) {
@@ -68,16 +31,16 @@ export class LibrosComponent implements OnInit {
 
           console.log(input1.value)
 
-          this.librosService.getOne(this.usuarioService.usuario.id_usuario, input1.valueAsNumber).subscribe( (data: Libros[]) => {
+          this.librosService.getOne(this.usuario.id_usuario, input1.valueAsNumber).subscribe( (data: Libros[]) => {
 
           this.newlibro = []
+          console.log(data)
+              // for(let i = 0; i < data.length; i++) {
 
-              for(let i = 0; i < data.length; i++) {
-
-                if (data[i].id_libro == input1.valueAsNumber) {
-                  this.newlibro.push(data[i])
-                }
-              }
+              //   if (data[i].id_libro == input1.valueAsNumber) {
+                  this.newlibro.push(data[0])
+                // }
+              // }
          })
 
       }
@@ -85,7 +48,7 @@ export class LibrosComponent implements OnInit {
       {
           this.newlibro = [];
 
-          this.librosService.getAll(this.usuarioService.usuario.id_usuario).subscribe( (data: Libros[]) => {  
+          this.librosService.getAll(this.usuario.id_usuario).subscribe( (data: Libros[]) => {  
 
             for( let i = 0; i < data.length; i++ ){
               this.newlibro.push(data[i]);  
@@ -96,12 +59,14 @@ export class LibrosComponent implements OnInit {
   }
 
     
-    eliminarLibro(id_libro:HTMLInputElement) {
+    eliminarLibro(id_libro:number) {
 
       this.newlibro = [];
+      console.log("entro por eliminar libro")
       console.log(id_libro);
   
-      let myIdLibro:number = id_libro.valueAsNumber
+      let myIdLibro:number = id_libro
+      console.log(myIdLibro)
 
       if(id_libro != null) {
         this.librosService.delete(myIdLibro).subscribe((data: Libros[]) => {

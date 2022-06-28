@@ -93,7 +93,7 @@ export class LibrosService {
   getAll(id_usuario:number ):Observable<Object>{
 
     console.log("Entro por GET ALL");
-
+    console.log(id_usuario)
     return this.http.get(this.url + "?id_usuario=" + id_usuario);
     
   }
@@ -123,9 +123,8 @@ export class LibrosService {
 
 
   delete(id_libro: number): Observable<Object> {
-
+    console.log("Id Libro del Service: " + id_libro)
     return this.http.delete(this.url + "?id_libro=" + id_libro)
-
   }
 
 }
