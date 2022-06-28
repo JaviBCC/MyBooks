@@ -47,7 +47,7 @@ export class LibrosComponent implements OnInit {
         else
       {
           this.newlibro = [];
-
+          
           this.librosService.getAll(this.usuario.id_usuario).subscribe( (data: Libros[]) => {  
 
             for( let i = 0; i < data.length; i++ ){
@@ -71,6 +71,21 @@ export class LibrosComponent implements OnInit {
       if(id_libro != null) {
         this.librosService.delete(myIdLibro).subscribe((data: Libros[]) => {
           console.log( data );
+
+
+          this.newlibro = [];
+          
+          this.librosService.getAll(this.usuario.id_usuario).subscribe( (data: Libros[]) => {  
+
+            for( let i = 0; i < data.length; i++ ){
+              this.newlibro.push(data[i]);  
+            }
+
+          })
+
+
+
+
         })
       }
   
