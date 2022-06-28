@@ -1,14 +1,14 @@
 export class Usuario {
 
-    public id_usuario: Number
-    public nombre: String
-    public apellidos: String
-    public correo: String
-    public url: String
-    public password: String
+    public id_usuario: number
+    public nombre: string
+    public apellidos: string
+    public correo: string
+    public url: string
+    public password: string
 
 
-    constructor(nombre: String, apellidos: String, correo: String, url: String, password: String)
+    constructor(nombre: string, apellidos: string, correo: string, url: string, password: string)
     {
         // this.id_usuario     = id_usuario;
         this.nombre         = nombre;

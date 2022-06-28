@@ -7,14 +7,14 @@ import { LibrosService } from 'src/app/shared/libros.service';
   templateUrl: './modificar-libro.component.html',
   styleUrls: ['./modificar-libro.component.css']
 })
+
+
+
 export class ModificarLibroComponent implements OnInit {
 
   public newlibro: Libros[];  
 
-  constructor(public librosService: LibrosService) { 
-
-
-  }
+  constructor(public librosService: LibrosService) {}
 
   ngOnInit(): void {
   }
@@ -24,6 +24,12 @@ export class ModificarLibroComponent implements OnInit {
 
     let nuevolibro = new Libros(input1.valueAsNumber,input2.valueAsNumber,input3.value,input4.value,input5.value,input6.value,input7.value);
     console.log(nuevolibro)
-    this.librosService.edit(nuevolibro);
+    
+    this.librosService.edit(nuevolibro).subscribe((data:Libros)=> 
+      {
+        this.newlibro.push(data)
+      })
   }
 }
+
+
