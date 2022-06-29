@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -22,31 +23,53 @@ export class LoginComponent implements OnInit {
   }
 
 
+  onSubmit(form:NgForm){
 
-  loginUser(input1:HTMLInputElement,input2:HTMLInputElement) {
-    console.log("login inicializado")
+    this.myService.getRegistro(this.usuario).subscribe((data:any)=>{
 
-    let nesLogin:Usuario = new Usuario("", "", input1.value, "", input2.value) 
-
-    this.myService.getRegistro(nesLogin).subscribe((data:any)=> {
-
-      console.log(data);
-
-      if(data.error == true) {
+      if(data.error == true){
         this.myService.logueado = false;
-        this.myService.usuario =null; 
-        
-      } else {
-          this.myService.logueado = true;
-          this.myService.usuario = data.result[0];
-          this.router.navigateByUrl('/libros')
+        this.myService.usuario = null;     
+
+      }else{
+
+        this.myService.logueado = true;
+        this.myService.usuario = data.result[0];   
+        this.router.navigateByUrl('/libros')
       }
-
-  })
-
-    console.log("enviamos")
-
+    })
   }
+
+
+
+  // loginUser(input1:HTMLInputElement,input2:HTMLInputElement) {
+  //   console.log("login inicializado")
+
+  //   let nesLogin:Usuario = new Usuario("", "", input1.value, "", input2.value) 
+
+  //   this.myService.getRegistro(nesLogin).subscribe((data:any)=> {
+
+  //     console.log(data);
+
+  //     if(data.error == true) {
+  //       this.myService.logueado = false;
+  //       this.myService.usuario =null; 
+        
+  //     } else {
+  //         this.myService.logueado = true;
+  //         this.myService.usuario = data.result[0];
+  //         this.router.navigateByUrl('/libros')
+  //     }
+
+  // })
+
+  //   console.log("enviamos")
+
+  // }
+
+
+
+
   ngOnInit(): void {
   }
 

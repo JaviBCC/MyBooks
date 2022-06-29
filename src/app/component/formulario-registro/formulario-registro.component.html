@@ -1,49 +1,90 @@
     
  <div class = "contenedor-formu">
-    <form class = "miformu1">
-        <!-- Nombre input -->
+    <form id = "formregister" class = "miformu1" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        
         <h2 class = "registrate">Registrate</h2>
         <hr style="border:2px;">
 
-        <div class="form-outline mb-4">
-            <input type="text" id="form1Example1" class="form-control" placeholder="Nombre" #input1/>
-            <label class="form-label" for="form1Example1"></label>
+        <!-- Nombre input -->
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" class="form-control" [(ngModel)]="usuario.nombre" #nombre="ngModel"
+
+            [ngClass]="{'is-invalid': (nombre.dirty || nombre.touched) && nombre.invalid }" required>
+            <div class="invalid-feedback" *ngIf="(nombre.dirty || nombre.touched) && nombre.invalid">
+                <p *ngIf="nombre.errors.required">El campo nombre es obligatorio<p>
+            </div>
         </div>
     
+
         <!-- Apellido input -->
-        <div class="form-outline mb-4">
-            <input type="text" id="form1Example2" class="form-control" placeholder="Apellido" #input2/>
-            <label class="form-label" for="form1Example2"></label>
-        </div>
+        <div class="form-group">
+            <label>Apellidos</label>
+            <input type="text" name="apellidos" class="form-control" [(ngModel)]="usuario.apellidos" #apellidos="ngModel"
+
+            [ngClass]="{'is-invalid':(apellidos.dirty || apellidos.touched) && apellidos.invalid}" required>
+            <div class="invalid-feedback" *ngIf="(apellidos.dirty || apellidos.touched) && apellidos.invalid">          
+                <p *ngIf="apellidos.errors.required">El campo apellidos es obligatorio</p>
+            </div>
+        </div>              
+
 
         <!-- Correo input -->
-        <div class="form-outline mb-4">
-            <input type="text" id="form1Example3" class="form-control" placeholder="Correo" #input3/>
-            <label class="form-label" for="form1Example2"></label>
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="email" name="correo" class="form-control" [(ngModel)]="usuario.correo" #email="ngModel"
+
+            [ngClass]="{'is-invalid': (email.dirty || email.touched) && email.invalid }" email required>
+            <div *ngIf="(email.dirty || email.touched) && email.invalid" class="invalid-feedback">
+                  <div  *ngIf="email.errors.required">El campo de email es obligatorio</div>
+                  <div  *ngIf="email.errors.email">El campo dirección no es válido</div>
+            </div>
         </div>
 
 
         <!-- URL input -->
-        <div class="form-outline mb-4">
-            <input type="text" id="form1Example4" class="form-control" placeholder="Url" #input4/>
-            <label class="form-label" for="form1Example2"></label>
+        <div class="form-group">
+            <label>URL</label>
+            <input type="text" name="url" class="form-control" [(ngModel)]="usuario.url" #url="ngModel"
+
+            [ngClass]="{'is-invalid': (url.dirty || url.touched) && url.invalid }" required>
+            <div class="invalid-feedback" *ngIf="(url.dirty || url.touched) && url.invalid">   
+                <p *ngIf="url.errors.required">El campo url es obligatorio</p>
+            </div>
         </div>
+     
 
         <!-- Contraseña input -->
-        <div class="form-outline mb-4">
-            <input type="password" id="form1Example5" class="form-control" placeholder="Contraseña" #input5/>
-            <label class="form-label" for="form1Example2"></label>
-        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" name="password" class="form-control" [(ngModel)]="usuario.password" #password="ngModel"
 
-        <!-- Repita Contraseña input -->
-        <div class="form-outline mb-4">
-            <input type="password" id="form1Example6" class="form-control" placeholder="Repita Contraseña" #input6/>
-            <label class="form-label" for="form1Example2"></label>
+            [ngClass]="{'is-invalid': (password.dirty || password.touched) && password.invalid }" minlength="8" required>
+            <div class="invalid-feedback" *ngIf="(password.dirty || password.touched) && password.invalid">   
+                <div *ngIf="password.errors.required">El campo contraseña es obligatorio</div>
+                <div *ngIf="password.errors.minlength">El campo contraseña debe tener 8 caracteres como minimo</div>
+            </div>
         </div>
     
+
+        <!-- Repita Contraseña input -->
+        <div class="form-group">
+            <label>Repita Contraseña</label>
+            <input type="password" name="password2" class="form-control" [(ngModel)]="registro.password2" #password2="ngModel"
+            [ngClass]="{'is-invalid': (password2.dirty || password2.touched) && password2.invalid }" minlength="8" required>
+
+            <div class="invalid-feedback" *ngIf="(password2.dirty || password2.touched) && password2.invalid">
+                <div *ngIf="password2.errors.required">El campo contraseña es obligatorio</div>
+                <div *ngIf="password2.errors.minlength">El campo contraseña debe tener 8 caracteres como minimo</div>
+            </div>
+        </div>      
+  
+    
         <!-- Submit button -->
-        <button type="reset" id= "miboton1" on-click = registerUser(input1,input2,input3,input4,input5,input6) class="btn btn-success">Registrarse</button>
+        <!-- <button type="reset" id= "miboton1" on-click = registerUser(input1,input2,input3,input4,input5,input6) class="btn btn-success">Registrarse</button> -->
         <!-- <button type="submit" id= "miboton1" class="btn btn-success">Registrarse</button> -->
+        <button class="btn btn-success" [disabled]="userForm.invalid">Registrarse</button>
+        
     </form>
 </div>
  
