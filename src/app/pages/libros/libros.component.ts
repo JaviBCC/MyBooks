@@ -72,19 +72,18 @@ export class LibrosComponent implements OnInit {
 
       if(id_libro != null) {
 
+
         for(let i = 0; i < this.newlibro.length; i++) {
 
-          console.log("ENTRA AL IF?");
           if (this.newlibro[i].id_libro === (id_libro)) {
 
-              // let elemBorrar = this.newlibro.indexOf
+          
             console.log("IMPRESION DE EL ID DEL LIBRO");
             
               console.log(this.newlibro[i].id_libro)
               console.log(id_libro)
              
-              // let elemBorrar = this.newlibro.indexOf(this.newlibro[i])
-              // console.log(elemBorrar)
+     
               console.log("PRIMERA IMPRESION DEL ARRAY");
               
               console.log(this.newlibro);
@@ -99,17 +98,6 @@ export class LibrosComponent implements OnInit {
 
         this.librosService.delete(myIdLibro).subscribe((data: Libros[]) => {
           console.log( data );
-
-          // this.newlibro = [];
-          
-          // this.librosService.getAll(this.usuario.id_usuario).subscribe( (data: Libros[]) => {  
-
-          //   for( let i = 0; i < data.length; i++ ){
-          //     this.newlibro.push(data[i]);  
-          //   } 
-
-          // })       
-
 
         })
       }

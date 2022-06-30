@@ -1,0 +1,42 @@
+<p>card works!</p>
+<div class= "contenedor-general">
+
+    <div class = "contenedor-arriba">
+
+        <!-- <div *ngFor="let libro of newlibro; let i = index" class="card" style="width: 18rem;"> -->
+            <div class = "myButtonX">
+                <button  type="button" (click)=eliminarLibro() class="btn btn-primary" >X</button>
+            </div>
+
+            <div class = "myPhotoCard">
+                <img src={{elementoPadre.url}} class="card-img-top">
+            </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{elementoPadre.titulo}}</h5>
+                    <div class="card-text">{{elementoPadre.tipo}}</div>
+                    <div class="card-text">{{elementoPadre.id_libro | mostrarreferencia}}</div>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{elementoPadre.autor}}</li>
+                    <li class="list-group-item">{{elementoPadre.precio}}</li>
+                    <li class="list-group-item">{{elementoPadre.url}}</li>
+                  
+                </ul>
+
+                <!-- <a [ngClass]="i%2==0 ? 'btn-primary' : 'btn-warning'" href="#" class="btn btn-primary">Comprar</a> -->
+
+                
+        <!-- </div>  -->
+
+        
+
+      <!-- <div *ngIf="newlibro.length === 0">
+        IMPORTANTE - REALIZAR BUSQUEDA PARA MOSTRAR COLECCION DE LIBROS
+      </div> -->
+
+    </div>
+
+</div>
+

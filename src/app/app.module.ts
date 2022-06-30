@@ -16,6 +16,7 @@ import { AnadirLibroComponent } from './pages/anadir-libro/anadir-libro.componen
 import { LoginComponent } from './pages/login/login.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from './component/card/card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MostrarreferenciaPipe,
     ModificarLibroComponent,
     AnadirLibroComponent,
-    LoginComponent
+    LoginComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     ReactiveFormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
